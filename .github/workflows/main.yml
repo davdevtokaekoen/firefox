@@ -1,0 +1,12 @@
+name: CI check
+on: [push, pull_request]
+
+jobs:
+  check-notebook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jupyter/notebook-action@v1
+        with:
+          notebook: 'CustomerSegmentation.ipynb'
+          timeout: 180
